@@ -1,0 +1,114 @@
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  background-color: #b1cef9;
+}
+.page-content h2 {
+  margin-right:650px;
+  font-size: 18px;
+  color: #333;
+}
+a{  
+  color: black;
+  text-decoration: none;
+    margin-right:20px;
+}
+.page-content a:hover {
+    cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+
+}
+.box1{
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 20px;
+}
+
+.appointment-container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.appointment-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 22px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  padding:8px;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+}
+.text{
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 8px;
+}
+.reset-btn {
+  padding:8px;
+  margin-left:400px;
+  border-radius: 8px;
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.confirm-btn:hover {
+  cursor: pointer;
+  background-color: #0056b3;
+}
+
+.reset-btn:hover {
+  cursor: pointer;
+  background-color: #5a6268;
+}

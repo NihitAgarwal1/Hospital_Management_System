@@ -1,0 +1,60 @@
+<header class="page-content">
+    <h2>Hospital Management System</h2>
+    <a routerLink="/home">Home</a>
+    <a routerLink="/patient">Patient</a>
+    <a routerLink="/doctor">Doctor</a>
+    <a routerLink="/bill">Bill</a>
+    <a routerLink="/stock">Stock</a>
+    </header>
+<div class="box1">
+  <div class="appointment-container">
+    <h2>Book a Doctor's Appointment</h2>
+
+    <form (ngSubmit)="bookAppointment()">
+  <div class="form-group">
+    <label for="patientName">Patient Name</label>
+    <input id="patientName" name="patientName" type="text" [(ngModel)]="patientName" placeholder="Enter Name">
+  </div>
+
+  <div class="form-group">
+    <label for="dob">Date of Birth</label>
+    <input id="dob" name="dob" type="date" [(ngModel)]="dob">
+  </div>
+
+  <div class="form-group">
+    <label for="contact">Contact Number</label>
+    <input id="contact" name="contact" type="text" [(ngModel)]="contact" placeholder="Ex: 48563axx3">
+  </div>
+
+  <div class="form-group">
+    <label for="doctor">Speciality</label>
+    <select id="doctor" name="doctor">
+      <option>Dr. Ayush Singh</option>
+      <option>Dr. Subh</option>
+      <option>Dr. Priya</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Appointment Date</label>
+    <input id="date" name="date" type="date" [(ngModel)]="date">
+  </div>
+
+  <div class="form-group">
+    <label for="time">Time Slot</label>
+    <select id="time" name="time" [(ngModel)]="time">
+      <option value="11:00 AM">11:00 AM</option>
+      <option value="10:00 AM">10:00 AM</option>
+      <option value="9:00 PM">9:00 PM</option>
+    </select>
+  </div>
+<div class="form-group">
+  <p class="text"><b>Reason for Appointment</b></p>
+  <textarea id="symptoms" name="symptoms" rows="4" placeholder="Describe your symptoms...">
+  </textarea>
+</div>
+  <button type="submit" class="confirm-btn">Confirm Application</button>
+  <button type="reset" class="reset-btn">Reset</button>
+</form>
+  </div>
+</div>
