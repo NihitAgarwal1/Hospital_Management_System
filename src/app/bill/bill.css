@@ -1,0 +1,79 @@
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  background-color: #b1cef9;
+}
+.page-content h2 {
+  margin-right:650px;
+  font-size: 18px;
+  color: #333;
+}
+a{  
+  color: black;
+  text-decoration: none;
+    margin-right:20px;
+}
+.page-content a:hover {
+    cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+.container{
+   padding-top:-100px;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.bill-container {
+  margin-top:-100px;
+    width: 400px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hospital-name {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.bill-details {
+    margin-bottom: 15px;
+}
+
+.bill-details p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.total {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px dashed #ccc;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    color: #27ae60;
+}
+
+.footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
