@@ -1,0 +1,115 @@
+.page-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 0 20px;
+  background-color: #b1cef9;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.page-content h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  margin-right: auto;
+}
+
+.page-content a {
+  color: black;
+  text-decoration: none;
+}
+
+.page-content a:hover {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.content {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-section {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  align-items: center;
+}
+
+.form-section h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 6px 0;
+}
+
+.form-section input,
+.form-section button {
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-section button {
+  background: #1abc9c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-section button:hover {
+  background: #16a085;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #ecf0f1;
+}
+
+.in-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.low-stock {
+  color: red;
+  font-weight: bold;
+}

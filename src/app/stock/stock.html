@@ -1,0 +1,53 @@
+<header class="page-content">
+  <h2>Hospital Management System</h2>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/patient">Patient</a>
+  <a routerLink="/doctor">Doctor</a>
+  <a routerLink="/bill">Bill</a>
+  <a routerLink="/stock">Stock</a>
+</header>
+
+<div class="content">
+  <div class="container">
+    <h1>Medicine Stock</h1>
+
+    <div class="form-section">
+      <h2>Add New Medicine</h2>
+      <input type="text" id="name" placeholder="Medicine Name" [(ngModel)]="medicineName">
+      <input type="text" id="category" placeholder="Category" [(ngModel)]="category">
+      <input type="number" id="quantity" placeholder="Quantity" [(ngModel)]="quantity">
+      <input type="number" id="cost" placeholder="Unit Cost" [(ngModel)]="cost">
+      <input type="date" id="expiry" [(ngModel)]="expiry">
+      <button type="button" (click)="addMedicine()">Add Medicine</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Medicine Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Unit Cost</th>
+            <th>Expiry Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="stockTable">
+          @for (medicine of medicines; track $index) {
+            <tr>
+              <td>{{ medicine.name }}</td>
+              <td>{{ medicine.category }}</td>
+              <td>{{ medicine.quantity }}</td>
+              <td>${{ medicine.cost.toFixed(2) }}</td>
+              <td>{{ medicine.expiry }}</td>
+              <td [class.low-stock]="medicine.quantity < 50" [class.in-stock]="medicine.quantity >= 50">
+                {{ medicine.quantity < 50 ? 'Low Stock' : 'In Stock' }}
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
