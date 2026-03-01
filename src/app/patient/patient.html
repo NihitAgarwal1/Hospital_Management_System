@@ -1,0 +1,56 @@
+<header class="page-content">
+  <h2>Hospital Management System</h2>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/patient">Patient</a>
+  <a routerLink="/doctor">Doctor</a>
+  <a routerLink="/bill">Bill</a>
+  <a routerLink="/stock">Stock</a>
+</header>
+
+<div class="patient-wrap">
+  <h3>Patient Appointments</h3>
+
+  @if (appointments.length === 0) {
+    <p>No patient records found.</p>
+  } @else {
+    <table>
+      <thead>
+        <tr>
+          <th>Patient Name</th>
+          <th>Doctor Appointed</th>
+          <th>Date of Appointment</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of appointments; track item.id ?? $index) {
+          <tr>
+            @if (editingId === item.id) {
+              <td><input type="text" [(ngModel)]="editPatientName" /></td>
+              <td>
+                <select [(ngModel)]="editDoctorAppointed">
+                  <option value="Dr. Ayush Singh">Dr. Ayush Singh</option>
+                  <option value="Dr. Subh">Dr. Subh</option>
+                  <option value="Dr. Priya">Dr. Priya</option>
+                </select>
+              </td>
+              <td><input type="date" [(ngModel)]="editAppointmentDate" /></td>
+              <td>
+                <button type="button" (click)="saveEdit(item)">Save</button>
+                <button type="button" (click)="cancelEdit()">Cancel</button>
+              </td>
+            } @else {
+              <td>{{ item.patientName }}</td>
+              <td>{{ item.doctorAppointed }}</td>
+              <td>{{ item.appointmentDate }}</td>
+              <td>
+                <button type="button" (click)="startEdit(item)">Edit</button>
+                <button type="button" class="delete-btn" (click)="deleteAppointment(item)">Delete</button>
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
