@@ -1,0 +1,44 @@
+<header class="page-content">
+  <h2>Hospital Management System</h2>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/patient">Patient</a>
+  <a routerLink="/doctor">Doctor</a>
+  <a routerLink="/bill">Bill</a>
+  <a routerLink="/stock">Stock</a>
+</header>
+
+<div class="doctor-wrap">
+  <h3>Doctors</h3>
+
+  @if (doctors.length === 0) {
+    <p>No doctors found.</p>
+  } @else {
+    <div class="doctor-list">
+      @for (doctor of doctors; track doctor.id) {
+        <div class="doctor-card">
+          <button type="button" class="doctor-toggle" (click)="toggleDoctor(doctor.id)">
+            {{ doctor.name }}
+          </button>
+
+          @if (expandedDoctorId === doctor.id) {
+            <div class="doctor-details">
+              <p><strong>Arrival Time:</strong> {{ doctor.arrivalTime }}</p>
+              <p><strong>Leaving Time:</strong> {{ doctor.leavingTime }}</p>
+
+              <h4>Patients</h4>
+              @if (patientsForDoctor(doctor.name).length === 0) {
+                <p>No patients assigned.</p>
+              } @else {
+                <ul>
+                  @for (patient of patientsForDoctor(doctor.name); track patient.id ?? $index) {
+                    <li>{{ patient.patientName }} ({{ patient.appointmentDate }})</li>
+                  }
+                </ul>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

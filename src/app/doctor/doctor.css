@@ -1,0 +1,72 @@
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  background-color: #b1cef9;
+}
+
+.page-content h2 {
+  margin-right: 650px;
+  font-size: 18px;
+  color: #333;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.page-content a:hover {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.doctor-wrap {
+  width: min(900px, 94%);
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.doctor-list {
+  display: grid;
+  gap: 14px;
+}
+
+.doctor-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.doctor-toggle {
+  width: 100%;
+  border: none;
+  background: #f2f6ff;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.doctor-toggle:hover {
+  background: #dce8ff;
+}
+
+.doctor-details {
+  padding: 12px 14px;
+}
+
+.doctor-details h4 {
+  margin: 12px 0 8px;
+}
+
+.doctor-details ul {
+  margin: 0;
+  padding-left: 18px;
+}
