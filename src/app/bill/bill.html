@@ -1,29 +1,56 @@
 <header class="page-content">
-    <h2>Hospital Management System</h2>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/patient">Patient</a>
-    <a routerLink="/doctor">Doctor</a>
-    <a routerLink="/bill">Bill</a>
-    <a routerLink="/stock">Stock</a>
+  <h2>Hospital Management System</h2>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/patient">Patient</a>
+  <a routerLink="/doctor">Doctor</a>
+  <a routerLink="/bill">Bill</a>
+  <a routerLink="/stock">Stock</a>
 </header>
+
 <div class="container">
-    <div class="bill-container">
-        <div class="hospital-name">
-            City Care Hospital
-        </div>
+  <div class="bill-container">
+    <div class="hospital-name">City Care Hospital</div>
 
-        <div class="bill-details">
-            <p><span class="label">Patient Name:</span> John Doe</p>
-            <p><span class="label">Doctor Appointed:</span> Dr. Smith</p>
-        </div>
+    <div class="search-area">
+      <label for="patientSearch">Search Patient</label>
+      <input
+        id="patientSearch"
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="filterPatients()"
+        (keydown.enter)="onEnterSearch()"
+        placeholder="Type patient name and press Enter"
+      />
 
-        <div class="total">
-            Total Amount: ₹500
-        </div>
-
-        <div class="footer">
-            Thank you for choosing our hospital.<br>
-            Get well soon!
-        </div>
+      @if (filteredAppointments.length > 0) {
+        <ul class="search-results">
+          @for (item of filteredAppointments; track item.id ?? $index) {
+            <li>
+              <button type="button" (click)="generateBill(item)">
+                {{ item.patientName }} - {{ item.doctorAppointed }} - {{ item.appointmentDate }}
+              </button>
+            </li>
+          }
+        </ul>
+      }
     </div>
+
+    @if (billGenerated && selectedAppointment) {
+      <div class="bill-details">
+        <p><span class="label">Patient Name:</span> {{ selectedAppointment.patientName }}</p>
+        <p><span class="label">Appointment Date:</span> {{ selectedAppointment.appointmentDate }}</p>
+        <p><span class="label">Phone Number:</span> {{ selectedAppointment.phoneNumber || selectedAppointment.contactNumber || 'Not available' }}</p>
+        <p><span class="label">Consultant Fee:</span> Rs. {{ getConsultantFee(selectedAppointment.doctorAppointed) }}</p>
+      </div>
+
+      <div class="total">Total Amount: Rs. {{ getConsultantFee(selectedAppointment.doctorAppointed) }}</div>
+
+      <div class="footer">
+        Thank you for choosing our hospital.<br />
+        Get well soon!
+      </div>
+    } @else {
+      <p class="hint">Search a patient and press Enter to generate bill.</p>
+    }
+  </div>
 </div>

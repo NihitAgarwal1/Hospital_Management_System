@@ -5,75 +5,128 @@
   height: 90px;
   background-color: #b1cef9;
 }
+
 .page-content h2 {
-  margin-right:650px;
+  margin-right: 650px;
   font-size: 18px;
   color: #333;
 }
-a{  
+
+a {
   color: black;
   text-decoration: none;
-    margin-right:20px;
+  margin-right: 20px;
 }
+
 .page-content a:hover {
-    cursor: pointer;
+  cursor: pointer;
   color: #007bff;
   text-decoration: underline;
 }
-.container{
-   padding-top:-100px;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
+
+.container {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 90px);
+  padding: 30px 15px;
 }
 
 .bill-container {
-  margin-top:-100px;
-    width: 400px;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: min(560px, 95%);
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hospital-name {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.search-area label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.search-area input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.search-results {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.search-results li {
+  border-bottom: 1px solid #edf1f5;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-results button:hover {
+  background: #f3f8ff;
 }
 
 .bill-details {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .bill-details p {
-    margin: 8px 0;
-    font-size: 16px;
+  margin: 8px 0;
+  font-size: 16px;
 }
 
 .label {
-    font-weight: bold;
-    color: #34495e;
+  font-weight: bold;
+  color: #34495e;
 }
 
 .total {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 2px dashed #ccc;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: right;
-    color: #27ae60;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 2px dashed #ccc;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  color: #27ae60;
 }
 
 .footer {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    color: #888;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.hint {
+  margin-top: 10px;
+  color: #5b6673;
 }

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from "@angular/router";
+
+import { MedicineStock, StockService } from '../stock.service';
 
 @Component({
   selector: 'app-stock',
@@ -8,25 +10,32 @@ import { RouterLink } from "@angular/router";
   templateUrl: './stock.html',
   styleUrl: './stock.css',
 })
-export class Stock {
+export class Stock implements OnInit, OnDestroy {
   medicineName = "";
   category = "";
   quantity: string | number | null = "";
   cost: string | number | null = "";
   expiry = "";
 
-  medicines: Array<{
-    name: string;
-    category: string;
-    quantity: number;
-    cost: number;
-    expiry: string;
-  }> = [
-    { name: "Paracetamol", category: "Painkiller", quantity: 120, cost: 0.15, expiry: "2026-03-10" },
-    { name: "Chloroquine", category: "Antihistamine", quantity: 20, cost: 0.20, expiry: "2026-12-10" },
-  ];
+  medicines: MedicineStock[] = [];
+  private unsubscribe: (() => void) | null = null;
 
-  addMedicine(): void {
+  constructor(private stockService: StockService) {}
+
+  ngOnInit(): void {
+    this.unsubscribe = this.stockService.subscribeMedicines((medicines) => {
+      this.medicines = medicines;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.unsubscribe) {
+      this.unsubscribe();
+      this.unsubscribe = null;
+    }
+  }
+
+  async addMedicine(): Promise<void> {
     const name = String(this.medicineName ?? "").trim();
     const category = String(this.category ?? "").trim();
     const quantityValue = String(this.quantity ?? "").trim();
@@ -46,13 +55,18 @@ export class Stock {
       return;
     }
 
-    this.medicines.push({
-      name,
-      category,
-      quantity,
-      cost,
-      expiry
-    });
+    try {
+      await this.stockService.addMedicine({
+        name,
+        category,
+        quantity,
+        cost,
+        expiry
+      });
+    } catch {
+      alert("Failed to save medicine in database");
+      return;
+    }
 
     this.medicineName = "";
     this.category = "";

@@ -6,22 +6,32 @@
   background-color: #b1cef9;
 }
 .page-content h2 {
-  margin-right:650px;
+  margin-right: 650px;
   font-size: 18px;
   color: #333;
 }
-a{  
+a {
   color: black;
   text-decoration: none;
-    margin-right:20px;
+  margin-right: 20px;
 }
-.page-content a:hover {
-    cursor: pointer;
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: black;
+  margin-right: 20px;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+.page-content a:hover,
+.nav-btn:hover {
+  cursor: pointer;
   color: #007bff;
   text-decoration: underline;
 
 }
-.box1{
+.box1 {
   font-family: Arial, sans-serif;
   background-color: #f7f9fc;
   margin: 0;
@@ -34,7 +44,7 @@ a{
   background: #fff;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .appointment-container h2 {
@@ -85,19 +95,19 @@ a{
 }
 
 .confirm-btn {
-  padding:8px;
+  padding: 8px;
   border-radius: 8px;
   background-color: #007bff;
   color: #fff;
 }
-.text{
+.text {
   font-size: 17px;
   color: #333;
   margin-bottom: 8px;
 }
 .reset-btn {
-  padding:8px;
-  margin-left:400px;
+  padding: 8px;
+  margin-left: 400px;
   border-radius: 8px;
   background-color: #6c757d;
   color: #fff;
